@@ -14,6 +14,7 @@ namespace abyssiness.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> NewMember([Bind("account, password, name, phone")] Member member)
         {
             Console.WriteLine("account:" + member.account);
