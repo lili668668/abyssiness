@@ -31,6 +31,7 @@ namespace abyssiness
         {
             // Add framework services.
             services.AddDbContext<abbyssContext>(options => options.UseNpgsql(Configuration.GetConnectionString("abbyssDatabase")));
+            Console.WriteLine(Configuration.GetConnectionString("abbyssDatabase"));
             services.AddMvc();
         }
 
