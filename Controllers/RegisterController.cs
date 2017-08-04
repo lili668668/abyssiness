@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using abyssiness.Models;
+using abyssiness;
 
 namespace abyssiness.Controllers
 {
@@ -17,10 +17,10 @@ namespace abyssiness.Controllers
         [HttpPost]
         public async Task<IActionResult> NewMember([Bind("account, password, name, phone")] Member member)
         {
-            Console.WriteLine("account:" + member.account);
-            Console.WriteLine("password:" + member.password);
-            Console.WriteLine("name:" + member.name);
-            Console.WriteLine("phone:" + member.phone);
+            Console.WriteLine("account:" + member.Account);
+            Console.WriteLine("password:" + member.Password);
+            Console.WriteLine("name:" + member.Name);
+            Console.WriteLine("phone:" + member.Phone);
             return RedirectToAction("Index", "Home");
         }
     }
