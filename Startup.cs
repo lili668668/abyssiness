@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace abyssiness
 {
@@ -28,6 +30,7 @@ namespace abyssiness
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<abbyssContext>(options => options.UseNpgsql(Configuration.GetConnectionString("abbyssDatabase")));
             services.AddMvc();
         }
 
