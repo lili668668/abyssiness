@@ -25,11 +25,6 @@ namespace abyssiness.Controllers
         [HttpPost]
         public async Task<IActionResult> NewMember([Bind("Account, Password, Name, Phone")] Member member)
         {
-            Console.WriteLine("account:" + member.Account);
-            Console.WriteLine("password:" + member.Password);
-            Console.WriteLine("name:" + member.Name);
-            Console.WriteLine("phone:" + member.Phone);
-
             try {
                 if (ModelState.IsValid) {
                     _abbyssContext.Add(member);
